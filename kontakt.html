@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Kontakt</title>
+</head>
+<body>
+    <nav>
+        <div class="logo">AurelioGG</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Startseite</a></li>
+            <li><a href="about.html">Über uns</a></li>
+            <li><a href="genaueres.html">Genaueres</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <div class="container">
+            <h1>Kontakt</h1>
+            <form id="contactForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">E-Mail:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Nachricht:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Absenden</button>
+            </form>
+            <p id="thankYouMessage" style="display:none;">Vielen Dank für deine Nachricht! Wir werden uns so schnell wie möglich bei dir melden.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="content" style="color: black;">
+
+        <p>&copy; 2024 AurelioGG. Alle Rechte vorbehalten.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        const form = document.getElementById('contactForm');
+        const thankYouMessage = document.getElementById('thankYouMessage');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Verhindert die Standard-Formularübermittlung
+            thankYouMessage.style.display = 'block'; // Zeigt die Dankesnachricht an
+            form.reset(); // Setzt das Formular zurück
+        });
+    </script>
+</body>
+</html>
